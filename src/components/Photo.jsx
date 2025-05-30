@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-// import pngegg from "/assets/pngegg.png"; // Ensure correct path, e.g. /public/assets/pngegg.png or /src/assets
 
 const Photo = () => {
   return (
@@ -14,7 +13,7 @@ const Photo = () => {
           animate={{ opacity: 1, transition: { delay: 2.4, duration: 0.4, ease: "easeInOut" } }}
           className="h-[298px] w-[298px] xl:h-[498px] xl:w-[498px] mix-blend-lighten absolute"
         >
-          <img src='/public/Images/self image .png' alt="" className="object-contain w-full h-full" />
+          <img src='/Images/self image .png' alt="" className="object-contain w-full h-full" />
         </motion.div>
 
         {/* animated circle */}

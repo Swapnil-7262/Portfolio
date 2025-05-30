@@ -31,7 +31,7 @@ const projects = [
       { name: "Node.js" },
       { name: "Cloudinary" }
     ],
-    image: "/public/Images/original.png", // replace with your actual image
+    image: "/Images/original.png", // replace with your actual image
     live: "",
     github: ""
   },
@@ -49,7 +49,7 @@ const projects = [
       { name: "Socket.io" },
       { name: "Google Gemini API" }
     ],
-    image: "/public/Images/Chatai.png", // replace with your actual image
+    image: "/Images/Chatai.png", // replace with your actual image
     live: "",
     github: ""
   },
@@ -66,7 +66,7 @@ const projects = [
       { name: "Node.js" },
       { name: "TomTom API" }
     ],
-    image: "/public/Images/uber-home.png", // replace with your actual image
+    image: "/Images/uber-home.png", // replace with your actual image
     live: "",
     github: ""
   }
