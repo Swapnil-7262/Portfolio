@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent:hover: #00e187;
+  --color-accent: #00ff99;
+  --color-primary: #1c1c22;
+  --font-primary: "var(--font-jetbrainsMono)";
+
+  --screen-sm: 640px;
+  --screen-md: 768px;
+  --screen-lg: 960px;
+  --screen-xl: 1200px;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-primary, sans-serif);
+    background-color: #18181b;
+    color: #ffffff;
+    line-height: 1.75;
+  }
+
+
+  .h1 {
+    font-size: 40px;
+    line-height: 1.1;
+    font-weight: 600;
+  }
+
+  @media (min-width: 1280px) {
+    .h1 {
+      font-size: 70px;
+    }
+  }
+
+  .h2 {
+    font-size: 36px;
+    line-height: 1.1;
+    font-weight: 600;
+  }
+
+  @media (min-width: 1280px) {
+    .h2 {
+      font-size: 48px;
+    }
+  }
+
+  .h3 {
+    font-size: 20px;
+    line-height: 1.1;
+    font-weight: 600;
+  }
+
+  @media (min-width: 1280px) {
+    .h3 {
+      font-size: 24px;
+    }
+  }
+}
+
+/* ✅ These must go OUTSIDE @layer base */
+.text-outline {
+  -webkit-text-stroke: 1px #ffffff;
+}
+
+.text-outline-hover {
+  -webkit-text-stroke: 1px #00ff99;
+}
