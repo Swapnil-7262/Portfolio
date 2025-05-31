@@ -41,7 +41,7 @@ const Contact = () => {
               {/* Disable captcha */}
               <input type="hidden" name="_captcha" value="false" />
               {/* Redirect URL after submit */}
-              <input type="hidden" name="_next" value="http://localhost:5173/" />
+              <input type="hidden" name="_next" value="https://portfolio-puce-pi-98.vercel.app/." />
 
               <h3 className="text-4xl text-accent">Let's Work Together</h3>
               <p className="text-white/60">
