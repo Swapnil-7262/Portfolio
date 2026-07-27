@@ -7,34 +7,33 @@ import { motion } from 'framer-motion';
 const services = [
   {
     num: '01',
-    title: 'Web Development',
+    title: 'Java Development',
     description:
-      'Building responsive and modern websites using HTML, CSS, JavaScript, and frameworks like React to ensure an engaging user experience across all devices.',
+      'Building robust, object-oriented applications using Core Java, following clean coding practices and strong OOP principles for maintainable software.',
     href: '',
   },
   {
     num: '02',
     title: 'Backend Development',
     description:
-      'Designing and implementing robust server-side logic, APIs, and databases using Node.js, Express, and MongoDB for scalable and secure web applications.',
+      'Designing and implementing server-side logic, REST APIs, and database integration using Java, JDBC, and Spring Boot for scalable applications.',
     href: '',
   },
   {
     num: '03',
-    title: 'MERN Stack',
+    title: 'Database Design',
     description:
-      'Full-stack web development using MongoDB, Express.js, React, and Node.js to create end-to-end solutions with seamless frontend-backend integration.',
+      'Structuring and managing relational databases using MySQL, writing efficient queries and schemas to support fast, reliable data operations.',
     href: '',
   },
   {
     num: '04',
-    title: 'SEO',
+    title: 'Problem Solving & DSA',
     description:
-      'Optimizing websites for search engines by improving site structure, performance, and content to increase visibility and drive organic traffic.',
+      'Solving real-world problems through data structures and algorithms, with a focus on writing efficient, optimized, and scalable Java code.',
     href: '',
   },
 ];
-
 
 const Services = () => {
   return (
