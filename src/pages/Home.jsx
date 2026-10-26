@@ -14,12 +14,12 @@ const Home = () => {
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           {/* text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl">Software Developer</span>
+            <span className="text-xl">Java Backend Developer</span>
             <h1 className="h1">Hello I'm <br /><span className="text-accent">Swapnil Chaudhari</span></h1>
             <p className="max-w-[500px] text-white/80 mb-9"> Bringing your vision to life with custom code solutions.</p>
 
             <div className=" flex flex-col xl:flex-row items-center gap-8">
-              <a href="/public/Doc/Swapnil_Chaudhari.pdf" download>
+              <a href="/Doc/Swapnil_Chaudhari.pdf" download>
                 <Button variant="outline" size="lg"  className="flex uppercase items-center gap-2">
                 <span>Download Resume</span>
                 <FiDownload className="text-xl" />

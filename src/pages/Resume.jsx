@@ -1,6 +1,6 @@
-import { FaHtml5, FaCss3, FaJava, FaReact, FaJs,FaNodeJs } from 'react-icons/fa';
+import { FaJava, FaReact, FaGitAlt } from 'react-icons/fa';
 import { GrMysql } from "react-icons/gr";
-import { SiMongodb, SiExpress } from "react-icons/si";
+import { SiSpringboot, SiSpringsecurity, SiHibernate, SiJsonwebtokens, SiPostgresql, SiMongodb, SiApachemaven, SiPostman } from "react-icons/si";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../components/ui/tooltip';
@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 
 const about = {
   title: "About Me",
-  description: "As a fresher, I have built a strong foundation in full stack development through academic projects, hands-on practice, and continuous learning.",
+  description: "Java backend developer and final-year MCA student with a strong foundation in OOP, DBMS and REST API design. I build Spring Boot applications with JWT security, JPA/Hibernate and MySQL/PostgreSQL, and I am now exploring AI integration with Spring AI. Self-taught through documentation, tutorials and hands-on projects.",
   info: [
     { fieldName: "Name", filedValue: "Swapnil Chaudhari" },
     { fieldName: "Phone", filedValue: "(+91) 9970817628" },
@@ -21,26 +21,19 @@ const about = {
   ]
 };
 
-const experience = {
-  title: "My Experience",
-  description: "As a fresher, I completed an internship and have developed several projects that showcase my skills in full stack development.",
-  items: [
-    {
-      company: "M2P Fintech Pvt Ltd.",
-      position: "Full Stack Java Developer (Internship)",
-      duration: "Jul 2022 - Present"
-    }
-  ]
-};
-
 const education = {
   title: "My Education",
-  description: "I am currently pursuing my Bachelor of Science in Computer Science and have completed my 12th Science with a strong academic record.",
+  description: "I am currently pursuing my Master of Computer Applications (MCA) and have completed my B.Sc. in Computer Science with a 9.28/10 CGPA.",
   items: [
+    {
+      institution: "SSBT College of Engineering & Technology, Jalgaon",
+      degree: "Master of Computer Applications",
+      duration: "2025 - 2027"
+    },
     {
       institution: "ACS College Dharangaon, North Maharashtra University",
       degree: "BSc Computer Science",
-      duration: "2022 - 2025"
+      duration: "2022 - 2025 | CGPA 9.28"
     },
     {
       institution: "ACS College Dharangaon, Maharashtra Board",
@@ -55,14 +48,18 @@ const skills = {
   title: "My Skills",
   description: "Technologies and tools I’ve worked with during projects, learning, and hands-on practice.",
   skillList: [
-    { icon: <FaHtml5 />, name: "HTML" },
-    { icon: <FaCss3 />, name: "CSS" },
-    { icon: <FaJs />, name: "JavaScript" },
+    { icon: <FaJava />, name: "Java" },
+    { icon: <SiSpringboot />, name: "Spring Boot" },
+    { icon: <SiSpringsecurity />, name: "Spring Security" },
+    { icon: <SiHibernate />, name: "Hibernate / JPA" },
+    { icon: <SiJsonwebtokens />, name: "JWT" },
     { icon: <GrMysql />, name: "MySQL" },
-    { icon: <SiMongodb />, name: "Mongo DB" },
-    { icon: <SiExpress />, name: "Express.js" },
+    { icon: <SiPostgresql />, name: "PostgreSQL" },
+    { icon: <SiMongodb />, name: "MongoDB" },
     { icon: <FaReact />, name: "React.js" },
-    { icon: <FaNodeJs />, name: "Node.js" },
+    { icon: <FaGitAlt />, name: "Git" },
+    { icon: <SiApachemaven />, name: "Maven" },
+    { icon: <SiPostman />, name: "Postman" },
   ]
 };
 
@@ -80,7 +77,6 @@ const Resume = () => {
             <TabsTrigger className='my-2' value="about">About Me</TabsTrigger>
             <TabsTrigger className='my-2' value="education">Education</TabsTrigger>
             <TabsTrigger className='my-2' value="skills">Skills</TabsTrigger>
-            {/* <TabsTrigger value="experience">Experience</TabsTrigger> */}
           </TabsList>
 
           <div className='min-h-[70vh] w-full'>
@@ -142,27 +138,6 @@ const Resume = () => {
                 </ul>
               </div>
             </TabsContent>
-
-            {/* <TabsContent value="experience">
-              <div className='flex flex-col gap-[30px] text-center xl:text-left'>
-                <h3 className='text-4xl font-bold'>{experience.title}</h3>
-                <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>{experience.description}</p>
-                <ScrollArea className="h-[400px]">
-                  <ul className='grid grid-cols-1 lg:grid-cols-2 gap-[30px]'>
-                    {experience.items.map((item, index) => (
-                      <li key={index} className='bg-[#232329] h-[184px] py-6 px-10 rounded-lg flex flex-col justify-center items-center lg:items-start gap-1'>
-                        <span className='text-accent'>{item.duration}</span>
-                        <h3 className='text-xl max-w-[260px] min-h-[60px] text-center lg:text-start'>{item.position}</h3>
-                        <div className='flex items-center gap-3.5'>
-                          <span className='h-[6px] w-[6px] bg-accent rounded-full'></span>
-                          <p className='text-white/60'>{item.company}</p>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </ScrollArea>
-              </div>
-            </TabsContent> */}
           </div>
         </Tabs>
       </div>

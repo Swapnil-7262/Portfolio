@@ -20,55 +20,70 @@ import SliderButton from "../components/SliderButton";
 const projects = [
   {
     num: '01',
-    category: "Full Stack",
-    title: "Campus Connect",
+    category: "Backend + AI",
+    title: "JobPilot AI",
     description:
-      "A web platform that enables communication between students, teachers, and college administration. Features include sharing of notes, assignments, and academic resources.",
+      "An AI job agent backend that reads a PDF resume and builds a structured profile using Spring AI with a local Ollama model. Stores profiles in PostgreSQL. Currently in development.",
     stack: [
-      { name: "MongoDB" },
-      { name: "Express.js" },
-      { name: "React.js" },
-      { name: "Node.js" },
-      { name: "Cloudinary" }
+      { name: "Java 21" },
+      { name: "Spring Boot" },
+      { name: "Spring AI" },
+      { name: "Ollama" },
+      { name: "PostgreSQL" }
     ],
-    image: "/Images/original.png", // replace with your actual image
+    image: "/Images/jobpilot-ai.png",
     live: "",
-    github: ""
+    github: "https://github.com/Swapnil-7262/jobpilot-ai"
   },
   {
     num: '02',
-    category: "Full Stack + AI",
-    title: "ChatAl",
+    category: "Backend",
+    title: "Bus Tracking System",
     description:
-      "A real-time chat application supporting one-on-one and group messaging, integrated with Google Gemini AI for instant query resolution.",
+      "A role-based bus tracking app for students, drivers and admins. I built the full backend (frontend by a teammate): JWT security and 20+ REST APIs for routes, stops, assignments and live location.",
     stack: [
-      { name: "MongoDB" },
-      { name: "Express.js" },
-      { name: "React.js" },
-      { name: "Node.js" },
-      { name: "Socket.io" },
-      { name: "Google Gemini API" }
+      { name: "Java 21" },
+      { name: "Spring Boot" },
+      { name: "Spring Security" },
+      { name: "JWT" },
+      { name: "JPA/Hibernate" },
+      { name: "MySQL" }
     ],
-    image: "/Images/Chatai.png", // replace with your actual image
+    image: "/Images/bus-tracker.png",
     live: "",
-    github: ""
+    github: "https://github.com/Swapnil-7262/bus_tracker"
   },
   {
     num: '03',
-    category: "Full Stack",
-    title: "Uber Clone",
+    category: "Desktop",
+    title: "Employee Management System",
     description:
-      "A ride-hailing application with features like user registration, ride booking, driver tracking, and payment processing, using TomTom API for real-time maps.",
+      "A Java Swing desktop app for managing employee records with admin login and add, view, update, delete and search modules, backed by MySQL through JDBC.",
     stack: [
-      { name: "MongoDB" },
-      { name: "Express.js" },
-      { name: "React.js" },
-      { name: "Node.js" },
-      { name: "TomTom API" }
+      { name: "Java" },
+      { name: "Swing" },
+      { name: "JDBC" },
+      { name: "MySQL" }
     ],
-    image: "/Images/uber-home.png", // replace with your actual image
+    image: "/Images/employee-management.png",
     live: "",
-    github: ""
+    github: "https://github.com/Swapnil-7262/Desktop-EMS"
+  },
+  {
+    num: '04',
+    category: "Frontend",
+    title: "Personal Portfolio",
+    description:
+      "This responsive portfolio, built with React, Vite and Tailwind CSS, with animated page transitions using Framer Motion and a working contact form.",
+    stack: [
+      { name: "React.js" },
+      { name: "Vite" },
+      { name: "Tailwind CSS" },
+      { name: "Framer Motion" }
+    ],
+    image: "/Images/portfolio.png",
+    live: "https://portfolio-puce-pi-98.vercel.app/",
+    github: "https://github.com/Swapnil-7262/Portfolio"
   }
 ];
 
@@ -114,18 +129,20 @@ const Work = () => {
 
               {/* Live and GitHub Links */}
               <div className="flex justify-evenly md:justify-start items-center gap-5 mb-5">
-                <a href={project.live} target="_blank" rel="noopener noreferrer">
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p className="capitalize">Live Project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </a>
+                {project.live && (
+                  <a href={project.live} target="_blank" rel="noopener noreferrer">
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                          <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p className="capitalize">Live Project</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </a>
+                )}
 
                 <a href={project.github} target="_blank" rel="noopener noreferrer">
                   <TooltipProvider delayDuration={100}>
