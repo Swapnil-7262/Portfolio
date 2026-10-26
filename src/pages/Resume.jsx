@@ -38,15 +38,15 @@ const education = {
     {
       institution: "ACS College Dharangaon, Maharashtra Board",
       degree: "12th Science",
-      duration: "2021 - 2022"
+      duration: "2021 - 2022",
+      status: "Completed"
     }
   ]
 };
 
-
 const skills = {
   title: "My Skills",
-  description: "Technologies and tools I’ve worked with during projects, learning, and hands-on practice.",
+  description: "Technologies and tools I've worked with during projects, learning, and hands-on practice.",
   skillList: [
     { icon: <FaJava />, name: "Java" },
     { icon: <SiSpringboot />, name: "Spring Boot" },
@@ -83,12 +83,18 @@ const Resume = () => {
             <TabsContent value="about">
               <div className='flex flex-col gap-[30px] text-center xl:text-left'>
                 <h3 className='text-4xl font-bold'>{about.title}</h3>
-                <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>{about.description}</p>
-                <ul className='grid grid-cols-1 xl:grid-cols-2 gap-y-8 max-w-[620px] mx-auto xl:mx-0'>
+                <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0 leading-relaxed'>{about.description}</p>
+                <ul className='grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-[620px] mx-auto xl:mx-0'>
                   {about.info.map((info, index) => (
-                    <li key={index} className='flex flex-col md:flex-row justify-center xl:justify-start items-center gap-2 md:gap-4'>
-                      <span className='text-white/60'>{info.fieldName}</span>
-                      <span className='sm:text-lg'>{info.filedValue}</span>
+                    <li
+                      key={index}
+                      className='flex items-center gap-4 bg-[#232329] rounded-xl px-5 py-4 hover:bg-[#2b2b33] transition-colors duration-300'
+                    >
+                      <span className='text-accent text-xl shrink-0'>{info.icon}</span>
+                      <div className='flex flex-col items-start text-left'>
+                        <span className='text-white/50 text-xs uppercase tracking-wide'>{info.fieldName}</span>
+                        <span className='text-sm sm:text-base font-medium'>{info.filedValue}</span>
+                      </div>
                     </li>
                   ))}
                 </ul>
@@ -98,16 +104,30 @@ const Resume = () => {
             <TabsContent value="education">
               <div className='flex flex-col gap-[30px] text-center xl:text-left'>
                 <h3 className='text-4xl font-bold'>{education.title}</h3>
-                <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>{education.description}</p>
-                <ScrollArea className="h-[400px]">
-                  <ul className='grid grid-cols-1 lg:grid-cols-2 gap-[30px]'>
+                <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0 leading-relaxed'>{education.description}</p>
+                <ScrollArea className="h-[420px]">
+                  <ul className='grid grid-cols-1 lg:grid-cols-2 gap-[24px] pr-2'>
                     {education.items.map((item, index) => (
-                      <li key={index} className='bg-[#232329] h-[184px] py-6 px-10 rounded-lg flex flex-col justify-center items-center lg:items-start gap-1'>
-                        <span className='text-accent'>{item.degree}</span>
-                        <h3 className='text-xl max-w-[260px] min-h-[120px] text-center lg:text-start'>{item.institution}</h3>
+                      <li
+                        key={index}
+                        className='relative bg-[#232329] min-h-[190px] py-6 px-8 rounded-xl flex flex-col justify-center items-center lg:items-start gap-2 border border-white/5 hover:border-accent/40 transition-all duration-300'
+                      >
+                        <span
+                          className={`absolute top-5 right-5 text-[11px] font-semibold px-3 py-1 rounded-full ${
+                            item.status === "Pursuing"
+                              ? "bg-accent/15 text-accent"
+                              : "bg-white/10 text-white/60"
+                          }`}
+                        >
+                          {item.status}
+                        </span>
+                        <span className='text-accent font-semibold'>{item.degree}</span>
+                        <h3 className='text-xl max-w-[240px] min-h-[100px] text-center lg:text-start leading-snug'>
+                          {item.institution}
+                        </h3>
                         <div className='flex items-center gap-3.5'>
                           <span className='h-[6px] w-[6px] bg-accent rounded-full'></span>
-                          <p className='text-white/60'>{item.duration}</p>
+                          <p className='text-white/60 text-sm'>{item.duration}</p>
                         </div>
                       </li>
                     ))}
@@ -119,14 +139,19 @@ const Resume = () => {
             <TabsContent value="skills">
               <div className='flex flex-col gap-[30px]'>
                 <h3 className="text-4xl font-bold">{skills.title}</h3>
-                <p className='max-w-[600px] text-white/60 mx-auto lg:mx-0'>{skills.description}</p>
+                <p className='max-w-[600px] text-white/60 mx-auto lg:mx-0 leading-relaxed'>{skills.description}</p>
                 <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px] gap-4'>
                   {skills.skillList.map((skill, index) => (
                     <li key={index}>
                       <TooltipProvider delayDuration={100}>
                         <Tooltip>
-                          <TooltipTrigger className='w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group'>
-                            <div className='text-6xl group-hover:text-accent transition-all duration-300'>{skill.icon}</div>
+                          <TooltipTrigger className='w-full h-[150px] bg-[#232329] border border-white/5 rounded-xl flex flex-col gap-3 justify-center items-center group hover:border-accent/40 hover:-translate-y-1 transition-all duration-300'>
+                            <div className='text-5xl group-hover:text-accent group-hover:scale-110 transition-all duration-300'>
+                              {skill.icon}
+                            </div>
+                            <span className='text-xs text-white/50 group-hover:text-white/80 transition-colors duration-300'>
+                              {skill.name}
+                            </span>
                           </TooltipTrigger>
                           <TooltipContent>
                             <p className='capitalize'>{skill.name}</p>
